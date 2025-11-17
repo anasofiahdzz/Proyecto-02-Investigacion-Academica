@@ -1,0 +1,107 @@
+\documentclass[10pt]{article}
+
+%Symbols
+\usepackage{verbatim} % Código
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{eufrak}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mathrsfs}
+\usepackage{fix-cm}
+\usepackage{textcomp}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{algpseudocode}
+\usepackage{textcomp}
+\usepackage{array}
+\usepackage{cancel}
+\usepackage[hidelinks]{hyperref} % Oculta los bordes rojos
+\usepackage{float} % en el preámbulo
+
+%\makeatletter
+%\DeclareRobustCommand{\regmark}{\raisebox{1.13ex}{%
+%  \fontsize{.4\dimexpr\f@size pt}\z@\selectfont\textregistered}%
+%}
+\usepackage[utf8]{inputenc}
+
+%Margins
+\addtolength{\voffset}{-1.5cm}
+\addtolength{\hoffset}{-1.5cm}
+\addtolength{\textwidth}{3cm}
+\addtolength{\textheight}{3cm}
+
+\usepackage{scrextend}
+\changefontsizes[12.5pt]{12.5pt}
+
+
+%Header-Footer
+\usepackage{fancyhdr}
+\setlength{\headheight}{22pt}
+%\setlength{\headheight}{22.54448pt}
+\addtolength{\topmargin}{-30pt}
+%\addtolength{\topmargin}{-10.54448pt}
+%Header Info
+
+\rhead{\textbf{Compiladores}}
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+{\large\bfseries\centering}{}{0pt}{}
+
+\usepackage[spanish]{babel}
+
+\pagestyle{fancyplain}
+
+\date{}
+
+\onehalfspacing
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        % Logo de la universidad
+        \includegraphics[width=10cm]{Logos.png}   \\  
+        \vspace{1cm}
+        {\Huge \textbf{Titulo del trabajo}} \\
+        \vspace{1cm}
+        % Nombre de la universidad
+        {\LARGE \textbf{Universidad Nacional Autónoma de}} \\
+        \vspace{2mm}
+        {\LARGE{\textbf{México}}}\\
+        \vspace{0.5cm}
+        {\Large \textbf{Facultad de Ciencias}}\\
+        \vspace{0.5cm}
+        {\Large \textbf{Compiladores}}\\
+        \vspace{1cm}
+        {\large \textbf{Profesor}} \\
+        {\large Manuel Soto Romero}\\
+        \vspace{0.3cm}
+        {\large \textbf{Ayudantes de laboratorio:}} \\
+        {\large Jason Todd}\\
+        {\large Dick Grayson}\\
+        \vspace{0.5cm} 
+        % Título del trabajo
+
+        %{\Large \textit{(Subtítulo opcional)}}\\
+        %\vspace{3cm
+        %Subtitulo (opcional)    
+        {\large \textbf{Integrantes}} \\
+        {\large Hernández Zavala Ana Sofía - No. Cuenta: 319316717\\ Sanluis Castillo Daniela Alejandra - No. Cuenta: 320091179\\ Mendiola Montes Victor Manuel - No. Cuenta: 320197350} \\
+        \vspace{1cm} 
+        {\large Fecha de entrega : 26/11/25}  
+    \end{center}
+\end{titlepage}
+
+\title{Verificación de compiladores\\ ¿Qué estrategias se utilizan para demostrar que un compilador es correcto, es decir, que preserva el significado del programa fuente?}
+
+\maketitle
+
+\section*{}
+
+\end{document}

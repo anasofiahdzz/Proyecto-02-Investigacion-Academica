@@ -63,9 +63,52 @@ runProgAux (s:resto) env =
   let env' = ejecutarSentencia env s
   in runProgAux resto env'
 
------------------------------
--- 3. Bytecode y máquina
------------------------------
+------------- 3. Bytecode y máquina-----------------
+
+-- Instrucciones de la máquina de pila
+data Op
+  = PUSH Int       -- meter un número a la pila
+  | LOAD String    -- cargar el valor de una variable y meterlo a la pila
+  | STORE String   -- sacar de la pila y guardarlo en una variable
+  | ADD            -- sumar los dos de arriba de la pila
+  deriving (Show, Eq)
+
+type Code  = [Op]
+type Stack = [Int]
+
+-- Estado de la máquina: entorno + pila
+type VMEnv = Env
+
+-- Ejecuta una instrucción sobre el estado (entorno y pila)
+paso :: Op -> VMEnv -> Stack -> (VMEnv, Stack)
+paso (PUSH n) env pila =
+  (env, n : pila)
+
+paso (LOAD x) env pila =
+  let v = buscarVariable x env
+  in (env, v : pila)
+
+paso (STORE x) env pila =
+  case pila of
+    []      -> error "Pila vacía en STORE"
+    (v:restoPila) ->
+      let env' = actualizarVariable x v env
+      in (env', restoPila)
+
+paso ADD env pila =
+  case pila of
+    (m:n:restoPila) ->
+      let s = n + m
+      in (env, s : restoPila)
+    _ ->
+      error "Pila insuficiente para ADD"
+
+-- Ejecuta un programa en bytecode
+exec :: Code -> VMEnv -> Stack -> (VMEnv, Stack)
+exec [] env pila = (env, pila)
+exec (op:ops) env pila =
+  let (env', pila') = paso op env pila
+  in exec ops env' pila'
 
 -----------------------------
 -- 4. Compilador AST → Code

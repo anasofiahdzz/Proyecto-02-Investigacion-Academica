@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.11.15)  16 NOV 2025 19:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.11.16)  10 DEC 2025 01:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -469,7 +469,7 @@ Package hyperref Info: Link coloring OFF on input line 64.
 
 LaTeX Info: Redefining \. on input line 64.
 LaTeX Info: Redefining \% on input line 64.
-<Logos.png, id=4, 513.92pt x 299.1175pt>
+<Logos.png, id=48, 513.92pt x 299.1175pt>
 File: Logos.png Graphic file (type png)
 <use Logos.png>
 Package pdftex.def Info: Logos.png  used on input line 69.
@@ -509,8 +509,35 @@ LaTeX Warning: No \author given.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.107 \end{document}
-                     [1] (./investigacion.aux
+l.119 
+       [1]
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+<importancia.png, id=61, 1852.9225pt x 293.095pt>
+File: importancia.png Graphic file (type png)
+<use importancia.png>
+Package pdftex.def Info: importancia.png  used on input line 126.
+(pdftex.def)             Requested size: 512.12738pt x 81.0061pt.
+
+Overfull \hbox (81.76912pt too wide) in paragraph at lines 126--127
+ [][] 
+ []
+
+[2 <./importancia.png>]
+LaTeX Info: Redefining \. on input line 169.
+LaTeX Info: Redefining \% on input line 169.
+ [3]
+<Captura desde 2025-12-09 18-50-57.png, id=94, 1188.44pt x 721.69624pt>
+File: Captura desde 2025-12-09 18-50-57.png Graphic file (type png)
+<use Captura desde 2025-12-09 18-50-57.png>
+Package pdftex.def Info: Captura desde 2025-12-09 18-50-57.png  used on input line 181.
+(pdftex.def)             Requested size: 430.35826pt x 261.34114pt.
+ [4]
+LaTeX Info: Redefining \. on input line 194.
+LaTeX Info: Redefining \% on input line 194.
+ [5 <./Captura desde 2025-12-09 18-50-57.png>] (./investigacion.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -519,21 +546,21 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.59996pt have occurred.
 
 Package rerunfilecheck Info: File `investigacion.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 905134DD4A8FD08A504601D562B27D3C;2232.
  ) 
 Here is how much of TeX's memory you used:
- 15212 strings out of 476041
- 244287 string characters out of 5793173
- 1854388 words of memory out of 6000000
- 35432 multiletter control sequences out of 15000+600000
- 520168 words of font info for 62 fonts, out of 8000000 for 9000
+ 15306 strings out of 476041
+ 245583 string characters out of 5793173
+ 1861388 words of memory out of 6000000
+ 35480 multiletter control sequences out of 15000+600000
+ 520867 words of font info for 64 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 108i,11n,106p,378b,471s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on investigacion.pdf (2 pages, 162742 bytes).
+ 108i,12n,106p,688b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on investigacion.pdf (6 pages, 319318 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

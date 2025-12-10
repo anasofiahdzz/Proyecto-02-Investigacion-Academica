@@ -855,10 +855,10 @@ INPUT ./investigacion.out
 INPUT investigacion.out
 INPUT ./investigacion.out
 INPUT investigacion.out
+OUTPUT investigacion.pdf
 INPUT ./investigacion.out
 INPUT ./investigacion.out
 OUTPUT investigacion.out
-OUTPUT investigacion.pdf
 INPUT ./Logos.png
 INPUT ./Logos.png
 INPUT Logos.png
@@ -905,10 +905,24 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./importancia.png
+INPUT ./importancia.png
+INPUT importancia.png
+INPUT ./importancia.png
+INPUT ./importancia.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
+INPUT ./Captura desde 2025-12-09 18-50-57.png
+INPUT ./Captura desde 2025-12-09 18-50-57.png
+INPUT Captura desde 2025-12-09 18-50-57.png
+INPUT ./Captura desde 2025-12-09 18-50-57.png
+INPUT ./Captura desde 2025-12-09 18-50-57.png
 INPUT investigacion.aux
 INPUT ./investigacion.out
 INPUT ./investigacion.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb

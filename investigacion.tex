@@ -102,6 +102,93 @@
 
 \maketitle
 
-\section*{}
+\section{Introducción}
+Los modelos, la teoría y los algoritmos asociados con un compilador pueden aplicarse a una amplia gama de problemas en el diseño y desarrollo de software. %pag6 libro del dragon
+Antes de que se ejecute algún programa, su código debe de ser traducido a alguna forma en la que la computadora pueda ejecutarla; esta traducción de un lenguaje a lenguaje máquina se logra por medio de un \textit{compilador}.\\
+Para demostrar esta pregunta, implementamos un mini compilador en Haskell el cual hace la traducción de un lenguaje simple a bytecode y verifica que la salida del compilador sea correcta, comparando sus ejecuciones.
+%aqui más intro (si lo consideras)
+
+\section{Fundamentos}
+Hay compiladores de alto nivel y de bajo nivel, el nivel describe qué tan abstracto es el lenguaje fuente con respecto al hardware de la computadora; es decir que los compiladores que procesan lenguajes de \textit{alto nivel} están diseñados para ser más entendibles por las personas (más cercanos al lenguaje natural) con un alto grado de abstracción. En cambio los compiladores que procesan lenguajes de \textit{bajo nivel} tienen un enfoque más directo y detallado sobre el hardware de la computadora.\\ % pag 358 libro del dragon (posible biblio) buscar bibliografia 
+%es necesario lo de alto nivel y bajo nivel??? tal vez se puede poner su relacion con correctitud o verificacion
+%aqui agregarle algunas otras definiciones o antecedentes
+Antes de adentrarnos completamnete en la definición de correctitud es necesario saber un poco sobre la verificación.\\
+La \textit{verificación} garantiza que las transformaciones de un compilador sean matemáticamente correctas y sigan las reglas formales, ocupa pruebas lógicas para verificar que el compilador no introduzca errores al traducir el código. \\ %articulo https://www.compilersutra.com/docs/compilers/verification_vs_validation/
+En cambio la \textit{validación} garantiza el correcto funcionamiento del compilador mediante la ejecución de programas de prueba y la comparación de los resultados  esperados y no se centra en la demostración matemática.\\% articulo: https://www.compilersutra.com/docs/compilers/verification_vs_validation/
+La verificación y la validación son demasiado importantes en el desarrollo de compiladores para garantizar la correctitud, el rendimiento y la seguridad.
+
+\section{Correctitud de los Compiladores}
+De hecho la correctitud es uno de los aspectos importantes de la verificación en compiladores.\\
+La correctitud asegura que el código compilado mantenga la lógica original y el comportamiento esperado del código fuente; es fundamental para la fiabilidad, la seguridad y la integridad del sistema del software. Garantiza que un compilador traduzca el código fuente a código máquina correcto y eficiente, evitando así problemas no deseados.\\ %articulo: https://www.compilersutra.com/docs/compilers/verification_vs_validation/
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1.19\textwidth]{importancia.png}
+  \caption{En este diagrama se muestra su importancia}
+  \label{fig:mi_imagen}
+\end{figure}
+
+%PONER MÁS TEORÍA SOBRE LA CORRECTITUD, en este video: https://www.youtube.com/watch?v=T_IINWzQhow se explica basicamente todo el proyecto, es la mayoria del codigo de MiniCompilador entonces también debe de citarse y de servir para el diseño e implementación de los puntos 1-3 de MiniCompilador y de compilador
+
+\subsection{Pasos para lograr la Correctitud}
+\begin{enumerate}
+    \item Análisis Sintáctico (Parsing): Verifica que el código sigue las reglas de gramatica del lenguaje.
+    \item Análisis Semántico: Verifica que el código tenga sentido y operaciones válidas.
+    \item Verificación de Representación Intermedia (IR): Asegura que las transformaciones mantengan la semántica del programa.
+    \item Comprobación de equivalencia: Las versiones optimizadas y no optimizadas deben generar resultados idénticos.
+    \item Gestión de tablas de símbolos: Garantizar un alcance correcto, declaraciones de variables y consistencia de tipos.
+    \item Validacion del Árbol de Anlálisis Sintáctico (AST): Verifica que la estructura del arbol es correcta.
+    \item Comprobación de tipos: Garantiza que las operaciones se apliquen a tipos de datos compatibles.
+    \item Análisis de flujo de control y flujo de datos: Verifica que la ejecución del programa siga las rutas lógicas correctas.
+    \item Métodos formales: Utiliza pruebas matemáticas para verificar la corrección a nivel teórico.
+    \item Pruebas con implementaciones de referencia: Compara los resultados con un compilador confiable para validar la precisión. %articulo: https://www.compilersutra.com/docs/compilers/verification_vs_validation/ 
+    %modificar palabras o redaccion
+\end{enumerate}
+
+\subsubsection{Metodología estructurada para verificar la correctitud en la compilacion}
+\begin{enumerate}
+    \item Verificación formal: utiliza pruebas matemáticas para confirmar que el compilador conserva la semántica del programa.
+    \item Pruebas sistemáticas: ejecuta casos de prueba predefinidos para detectar errores en las distintas etapas de la compilación.
+    \item Validación de la traducción: compara el comportamiento del programa fuente y el de destino tras la compilación para garantizar su corrección.
+    \item Pruebas aleatorias (fuzzing): genera entradas aleatorias para descubrir fallos y vulnerabilidades inesperadas del compilador.
+    \item Herramientas de depuración automatizada: identifica y rastrea los errores introducidos durante la compilación mediante análisis de registros y marcos de depuración.
+    \item Pruebas diferenciales: ejecuta la misma entrada en varios compiladores y compara las salidas para detectar inconsistencias.
+    \item Pruebas basadas en propiedades: verifica que el código compilado mantenga las propiedades fundamentales del programa (p. ej., corrección y determinismo).
+    \item Ejecución simbólica: analiza todas las posibles rutas de ejecución en el código compilado para detectar inconsistencias lógicas. 
+    \item Técnicas de resolución de restricciones: Utiliza solucionadores como Z3 para verificar que las transformaciones del compilador no alteren el comportamiento del programa.
+    \item Evaluación comparativa (Benchmarking) y Profiling: Evalúa el rendimiento de salida del compilador para garantizar que las optimizaciones sean efectivas y no reduzcan la velocidad de ejecución. %articulo: https://www.compilersutra.com/docs/compilers/verification_vs_validation/ 
+    %modificar palabras o redaccion
+    %esta parte es muy importante porque aqui se debe de explicar como se verifica la correctitud, es la respuesta a la pregunta
+\end{enumerate}
+
+\section{Diseño e Implementación del Código}
+En la carpeta /Proyecto-02-Investigacion-Academica/src se tiene 2 archivos, MiniCompilador.hs y compilador.hs\\
+\textit{MiniCompilador.hs} es un compilador que traduce las expresiones del programa a instrucciones con la finalidad de ver su correctitud al comparar la ejecucion directa (AST) con la ejecucuion compilada (Bytecode).\\ %modificar palabras o redaccion y ortografía
+\textit{compilador.hs} es un compilador muy pequeño que nos sirvió de ejemplo para hacer el compilador más grande, éste solo maneja sumas, sin embargo si se implementó todos los pasos de un compilador. %modificar palabras o redaccion y ortografía
+%modificar palabras o redaccion y ortografía
+\subsection{Código del programa MiniCompilador.hs}
+\subsubsection{Estructura}
+\begin{enumerate}
+    \item Lenguaje fuente (AST): Define la estructura de como deben de verse los programas en el lenguaje; no se ejecuta nada solo se define la forma del lenguaje.
+    \item Intérprete del AST: Ejecuta el lenguaje fuente, sin haberlo compilado; toma el programa, ejecuta cada linea del mismo una por una, mantiene el entorno de variables y devuelve los valores finales de dichas variables.
+    \item Bytecode y máquina virtual: Ahora se muestra un lenguaje de bajo nivel con su programa correspondiente que lo ejecuta; ejecuta cada instrucción usando una pila y un entorno.
+    \item Compilador (AST a Bytecode): Convierte los programas AST en instruccione simples, es decir que traduce las expresiones del programa a instrucciones.
+    \item Verificacion de correctitud: Prueba la correctitud del compilador, comparando la ejecucion directa (AST) con la ejecucuion compilada (Bytecode), si resultan iguales entonces el compilador es correcto.
+\end{enumerate}
+%debe de explicarse más y mejor su estructura y añadir el codigo como tal (o no?)
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Captura desde 2025-12-09 18-50-57.png}
+  \caption{Ejecución con ejemplos de MiniCompilador.hs}
+  \label{fig:mi_imagen2}
+\end{figure}
+
+\subsubsection{Código del programa compilador.hs}
+%supongo que sería bueno explicarlo también y ponerle su estructura
+
+\subsection{Verificación del Código}
+%me refiero a la verificacion de MiniCompilador.hs, aunque tal vez no estaría mal la de compilador.hs
+
+\section{Conclusiones}
 
 \end{document}

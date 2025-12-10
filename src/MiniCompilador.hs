@@ -110,10 +110,43 @@ exec (op:ops) env pila =
   let (env', pila') = paso op env pila
   in exec ops env' pila'
 
------------------------------
--- 4. Compilador AST → Code
------------------------------
+-- 4. Compilador AST a Code
+-- Traduce una expresion a bytecode
+-- nota: recordando que Bytecode es algo que la compu puede ejecutar paso a paso, pasando del lenguaje que recibe 
+compilaExpresion :: Expr -> Code --traduce expresiones
+compilaExpresion (Const n) =
+  [PUSH n] -- se le agrega n encima de la pila, entra n a la pila y queda encima
 
------------------------------
--- 5. Verificación de correctitud
------------------------------
+compilaExpresion (Var x) =
+  [LOAD x] -- cargar el valor que tiene x y colocarlo en la pila
+
+compilaExpresion (Add e1 e2) =
+  compilaExpresion e1 ++
+  compilaExpresion e2 ++
+  [ADD] -- ADD funciona asi: add(expresion e1)(expresion e2), para esto debe de compilar la primera expresion con un PUSH, despues compilar la segunda expresion con otro PUSH, despues de haber colocado ambas expresiones en la pila las suma.
+
+-- Traduce sentencias
+compilaSentencia :: Stmt -> Code --traduce sentencias
+compilaSentencia (Assign x e) =
+  compilaExpresion e ++ -- calcular el valor
+  [STORE x] -- guardar el valor en x
+
+-- Traduce un programa 
+compilaPrograma :: Program -> Code 
+compilaPrograma [] = []
+compilaPrograma (s:resto) = -- traduce la primer sentancia, luego traduce el resto
+  compilaSentencia s ++ compilaPrograma resto -- une ambas listas
+
+-- 5. Verificacion de correctitud
+-- compila el programa, ejecuta el bytecode y devuelve el entorno final
+-- ejecuta el programa ya compilado
+ejecutaPrograma :: Program -> Env
+ejecutaPrograma prog =
+  let codigo = compilaPrograma prog -- compila
+      (entornoFinal, _) = exec codigo [] [] -- ejecuta con entorno y pila vacias
+  in entornoFinal
+
+-- Compara la ejecucion directas (AST) vs compilada (bytecode) 
+verificarCorrectitud :: Program -> Bool
+verificarCorrectitud prog =
+  runProgramAST prog == ejecutaPrograma prog

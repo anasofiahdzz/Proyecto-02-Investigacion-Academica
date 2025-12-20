@@ -1,0 +1,16 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Marco Teórico}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Estructura de un compilador}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Preservación semántica}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Enfoque algebraico}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Correctitud de los Compiladores}{5}{section.3}%
+\contentsline {section}{\numberline {4}Estrategias para que un compilador sea correcto}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Inducción matemática}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Lógica mecanizada}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Especificación e implementación de un compilador dirigido por sintaxis}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}CompCert}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Compositional CompCert}{12}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Desarrollo del ejemplo práctico}{12}{section.5}%
+\contentsline {section}{\numberline {6}Discusiones y limitaciones}{14}{section.6}%
+\contentsline {section}{\numberline {7}Conclusiones}{15}{section.7}%

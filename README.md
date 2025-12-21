@@ -61,3 +61,6 @@ Donde `verificarCorrectitud` nos dice si no hubo errores y si los entornos final
 
 Nota para ambos modulos. Si se desea definir otro ejemplo (bajo las reglas del modulo) con el mismo nombre de `ejemplo` u otro nombre, es posible hacerlo y probarlo con el programa. Si la definición del ejemplo tiene otro nombre, solo debemos sustituir el nombre por la palabra `ejemplo` en los comandos. Por ejemplo, si definimos un segundo ejemplo `prueba`, entonces debemos ejecutar `correct prueba` ó `ejecutaPrograma prueba` (por decir dos comandos).
 
+## Video explicando el proyecto
+[Video](https://drive.google.com/drive/folders/18yGSq5mNuoUHdLF3n_dmWaA7_gghkRzJ?usp=sharing).
+
